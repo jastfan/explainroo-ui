@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Stub out Vite HMR WebSocket in cloud preview iframe where HMR is disabled
+      (function() {
+        if (typeof window !== 'undefined' && window.WebSocket) {
+          const OrigWebSocket = window.WebSocket;
+          const CustomWebSocket = function(url, protocols) {
+            const isViteHmr =
+              protocols === 'vite-hmr' ||
+              (Array.isArray(protocols) && protocols.includes('vite-hmr')) ||
+              (typeof url === 'string' && (url.includes('vite-hmr') || url.includes('@vite')));
+
+            if (isViteHmr) {
+              const mock = new EventTarget();
+              mock.send = function() {};
+              mock.close = function() {};
+              mock.readyState = 1; // OPEN
+              mock.url = url;
+              mock.protocol = 'vite-hmr';
+              mock.extensions = '';
+              mock.binaryType = 'blob';
+              setTimeout(() => {
+                mock.dispatchEvent(new Event('open'));
+              }, 10);
+              return mock;
+            }
+            return new OrigWebSocket(url, protocols);
+          };
+          CustomWebSocket.prototype = OrigWebSocket.prototype;
+          CustomWebSocket.CONNECTING = 0;
+          CustomWebSocket.OPEN = 1;
+          CustomWebSocket.CLOSING = 2;
+          CustomWebSocket.CLOSED = 3;
+          window.WebSocket = CustomWebSocket;
+        }
+
+        const origError = console.error;
+        console.error = function(...args) {
+          const text = args.map(a => (a && a.message) || String(a)).join(' ');
+          if (text.includes('WebSocket') || text.includes('[vite]')) {
+            return;
+          }
+          origError.apply(console, args);
+        };
+        window.addEventListener('error', function(e) {
+          if (e.message && (e.message.includes('WebSocket') || e.message.includes('[vite]'))) {
+            e.stopImmediatePropagation();
+            e.preventDefault();
+          }
+        }, true);
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Explainroo Studio - No-Code Animated Explainer Video Creator</title>
+    <meta name="description" content="Transform GitHub repos and software concepts into narrated, animated explainer videos without terminal commands or code. Powered by Explainroo." />
+    <meta name="keywords" content="explainroo, explainer video generator, software demo, animated diagrams, whiteboard animation, code to video, no-code video creator" />
+    <meta name="author" content="Explainroo Studio" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="/" />
+
+    <!-- Mobile & PWA Theme Colors -->
+    <meta name="theme-color" content="#090d16" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Explainroo" />
+    <meta name="application-name" content="Explainroo Studio" />
+    <meta name="msapplication-TileColor" content="#090d16" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Explainroo Studio" />
+    <meta property="og:title" content="Explainroo Studio - No-Code Animated Explainer Video Creator" />
+    <meta property="og:description" content="Transform software repos and complex concepts into narrated, animated explainer videos with visual diagrams and synchronized voiceovers." />
+    <meta property="og:image" content="/screenshot-desktop.png" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="720" />
+    <meta property="og:image:alt" content="Explainroo Studio Visual Video Builder" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Explainroo Studio - No-Code Explainer Video Creator" />
+    <meta name="twitter:description" content="Turn complex code and system architecture into narrated, animated explainer videos in your browser." />
+    <meta name="twitter:image" content="/screenshot-desktop.png" />
+
+    <!-- Icons & Manifest Links -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" />
+
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Schema.org JSON-LD Structured Data for WebApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Explainroo Studio",
+      "alternateName": "Explainroo",
+      "description": "Visual, no-code studio for creating narrated animated explainer videos, software architecture diagrams, and product demos.",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript. Requires HTML5 Canvas.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+  </head>
+  <body class="h-full bg-slate-950 text-slate-100 font-sans antialiased overflow-x-hidden">
+    <div id="root" class="h-full"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

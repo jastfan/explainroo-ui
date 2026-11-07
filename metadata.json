@@ -1,0 +1,8 @@
+{
+  "name": "Explainroo UI",
+  "description": "Visual No-Code Studio for Explainroo - Create, preview, and export narrated animated software explainer videos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
