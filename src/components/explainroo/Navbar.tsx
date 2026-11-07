@@ -5,6 +5,7 @@ import {
   Download,
   Palette,
   RotateCcw,
+  Github,
 } from 'lucide-react';
 import { ThemeLook, THEME_CONFIGS } from '../../types/explainroo';
 
@@ -100,14 +101,14 @@ export const Navbar: React.FC<NavbarProps> = ({
             <span className="hidden md:inline">Templates</span>
           </button>
 
-          {/* Export Video & CLI Bundle */}
+          {/* Export Video & Direct Download */}
           <button
             onClick={onOpenExport}
             className="flex items-center gap-1.5 px-3 py-1.5 bg-cyan-500/15 hover:bg-cyan-500/25 border border-cyan-500/40 text-cyan-300 text-xs font-semibold rounded-lg transition-colors cursor-pointer"
-            title="Export MP4/WebM Video or Explainroo CLI files"
+            title="Download Standalone Player (.html), Video, or Project files"
           >
             <Download className="w-3.5 h-3.5" />
-            <span>Export</span>
+            <span>Download / Export</span>
           </button>
 
           {/* Reset Project */}
@@ -118,6 +119,17 @@ export const Navbar: React.FC<NavbarProps> = ({
           >
             <RotateCcw className="w-3.5 h-3.5" />
           </button>
+
+          {/* GitHub Repository */}
+          <a
+            href="https://github.com/jastfan/explainroo-ui"
+            target="_blank"
+            rel="noreferrer"
+            className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer flex items-center justify-center"
+            title="GitHub: jastfan/explainroo-ui"
+          >
+            <Github className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </header>

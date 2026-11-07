@@ -397,28 +397,3 @@ export const ExportModal: React.FC<ExportModalProps> = ({
     </div>
   );
 };
-
-        {/* Tab 3: Snapshot PNG */}
-        {activeTab === 'snapshot' && (
-          <div className="space-y-4 py-2">
-            <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 text-center space-y-2">
-              <Camera className="w-8 h-8 text-emerald-400 mx-auto" />
-              <h4 className="text-xs font-bold text-slate-200">High-Resolution Canvas Snapshot</h4>
-              <p className="text-xs text-slate-400 max-w-sm mx-auto">
-                Download a clean, crystal-clear 1280x720 PNG of your current visual scene for presentations, tweets, or documentation.
-              </p>
-            </div>
-
-            <button
-              onClick={handleDownloadSnapshot}
-              className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs shadow-lg transition-transform active:scale-95 cursor-pointer"
-            >
-              <Download className="w-4 h-4" />
-              <span>Download Snapshot PNG</span>
-            </button>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
