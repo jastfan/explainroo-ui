@@ -2,6 +2,31 @@
   "name": "explainroo-ui",
   "version": "1.0.0",
   "description": "Visual No-Code Studio for Explainroo - Create, preview, and export narrated animated software explainer videos.",
+  "homepage": "https://github.com/jastfan/explainroo-ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jastfan/explainroo-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jastfan/explainroo-ui/issues"
+  },
+  "keywords": [
+    "explainroo",
+    "explainer-videos",
+    "canvas",
+    "roughjs",
+    "text-to-speech",
+    "diagrams",
+    "system-design",
+    "architecture-diagrams",
+    "video-generator",
+    "karaoke-subtitles",
+    "react19",
+    "typescript",
+    "pwa",
+    "no-code",
+    "fondpeace"
+  ],
   "type": "module",
   "scripts": {
     "build": "vite build",

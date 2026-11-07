@@ -7,11 +7,13 @@
   <p><strong>Visual No-Code Web Studio for Animated Technical Explainer Videos</strong></p>
 
   <p align="center">
+    <a href="#-direct-download--1-click-run">Direct Download</a> •
     <a href="#-quickstart">Quickstart</a> •
     <a href="#-how-it-works">How It Works</a> •
     <a href="#-4-visual-themes">Themes</a> •
     <a href="#-component-library">Components</a> •
-    <a href="#-export-formats">Exports</a> •
+    <a href="#-export--download-formats">Exports</a> •
+    <a href="#-sponsor">Sponsor</a> •
     <a href="#-roadmap">Roadmap</a>
   </p>
 
@@ -26,9 +28,20 @@
   <p align="center">
     <img src="https://img.shields.io/badge/build-passing-brightgreen?style=flat-square" alt="Build Passing" />
     <img src="https://img.shields.io/badge/version-v1.0.0-orange?style=flat-square" alt="Version 1.0" />
+    <img src="https://img.shields.io/github/stars/jastfan/explainroo-ui?style=flat-square&color=yellow" alt="Stars" />
     <img src="https://img.shields.io/badge/react-19.0-blue?style=flat-square" alt="React 19" />
     <img src="https://img.shields.io/badge/canvas-rough.js-yellow?style=flat-square" alt="Rough.js" />
-    <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="License MIT" />
+    <img src="https://img.shields.io/github/license/jastfan/explainroo-ui?style=flat-square&color=green" alt="License MIT" />
+  </p>
+
+  <p align="center">
+    <a href="https://github.com/jastfan/explainroo-ui/archive/refs/heads/main.zip">
+      <img src="https://img.shields.io/badge/📥_Download_Explainroo_UI-Latest_Release_(ZIP)-f59e0b?style=for-the-badge&logoColor=white" alt="Download Explainroo UI ZIP" />
+    </a>
+  </p>
+
+  <p align="center">
+    <sub>Sponsored with ❤️ by <a href="https://fondpeace.com" target="_blank"><strong>FondPeace.com</strong></a></sub>
   </p>
 
 </div>
@@ -42,6 +55,27 @@
 ---
 
 > **Turn system architectures, developer workflows, distributed systems, and code algorithms into narrated, animated explainer videos** — with hand-drawn Rough.js vector physics, real-time audio ducking, word-synchronized triggers, and 1-click video recording.
+
+---
+
+## 📥 Direct Download & 1-Click Run
+
+You don't need Git or complex command lines to download and run Explainroo UI:
+
+| Platform / Method | Direct Download Link | How to Run |
+| :--- | :--- | :--- |
+| **Windows** | [📥 **Download Studio ZIP**](https://github.com/jastfan/explainroo-ui/archive/refs/heads/main.zip) | Unzip ➔ Double-click **`start.bat`** *(auto-installs & opens browser)* |
+| **macOS / Linux** | [📥 **Download Studio ZIP**](https://github.com/jastfan/explainroo-ui/archive/refs/heads/main.zip) | Unzip ➔ Run **`./start.sh`** |
+| **Developer Git** | `git clone https://github.com/jastfan/explainroo-ui.git` | `cd explainroo-ui && npm install && npm run dev` |
+| **Standalone Web Player** | Inside Studio ➔ Click **Download / Export** ➔ **Standalone Player** | Downloads a zero-dependency **`.html`** that plays offline anywhere |
+
+### ⚡ 3-Step Instant Launch for Anyone:
+1. **Download**: Click [📥 **Download Latest ZIP**](https://github.com/jastfan/explainroo-ui/archive/refs/heads/main.zip).
+2. **Extract**: Right-click the downloaded `.zip` and choose **Extract All**.
+3. **Run**:
+   - On **Windows**: Double-click **`start.bat`**.
+   - On **macOS / Linux**: Open Terminal and run **`./start.sh`**.
+   - *Explainroo UI auto-installs dependencies and opens your browser at `http://localhost:3000` automatically!*
 
 ---
 
@@ -118,11 +152,13 @@ Place pre-built, responsive diagram blocks onto the canvas with a single click:
 
 ---
 
-## 📦 Export Formats
+## 📦 Export & Download Formats
 
-- **WebM / MP4 Video**: Direct client-side capture ready for YouTube, Twitter/X, LinkedIn, and product demos.
-- **Headless CLI Bundle**: Download `.zip` containing standardized `script.md` and `scenes.js` compatible with `node bin/explainroo.js render`.
-- **PNG Frame Poster**: High-resolution 1280x720 canvas snapshot for documentation, thumbnails, and blog posts.
+- 🌐 **Standalone Offline HTML Player (.html)**: 1-click single-file download with all scenes, vector animations, Whisper subtitles, and voice synthesis embedded. Zero-dependency, offline-ready, double-click to play anywhere.
+- 🎬 **WebM / MP4 Video**: Direct client-side video capture ready for YouTube, Twitter/X, LinkedIn, and product demos.
+- 📦 **Headless CLI Bundle (.zip)**: Complete package containing `standalone-player.html`, `project.explainroo.json`, `script.md`, and `scenes.js` compatible with `node bin/explainroo.js render`.
+- 💾 **Project Backup (.json)**: Save and reload full project state into Explainroo UI anytime.
+- 📸 **PNG Frame Poster**: High-resolution 1280x720 canvas snapshot for documentation, thumbnails, and blog posts.
 
 ---
 
@@ -145,7 +181,7 @@ Place pre-built, responsive diagram blocks onto the canvas with a single click:
 
 ### 1. Clone & Install
 ```bash
-git clone https://github.com/YOUR_USERNAME/explainroo-ui.git
+git clone https://github.com/jastfan/explainroo-ui.git
 cd explainroo-ui
 npm install
 ```
@@ -183,11 +219,29 @@ Open **`http://localhost:3000`** in your browser.
 
 Contributions, bug reports, and suggestions are welcome!
 
-1. Fork the repository
+1. Fork the repository on [GitHub](https://github.com/jastfan/explainroo-ui/fork)
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit your changes (`git commit -m "feat: add amazing feature"`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+5. Open a [Pull Request](https://github.com/jastfan/explainroo-ui/pulls)
+
+---
+
+## 💖 Sponsor
+
+Explainroo UI is proudly supported and sponsored by:
+
+<div align="center">
+
+  <a href="https://fondpeace.com" target="_blank">
+    <img src="https://img.shields.io/badge/Official_Sponsor-FondPeace.com-ff4081?style=for-the-badge&logo=heart&logoColor=white" alt="FondPeace Official Sponsor" />
+  </a>
+
+  <p>
+    <a href="https://fondpeace.com" target="_blank"><strong>FondPeace.com</strong></a> — Promoting inner peace, mindful wellness, and calm productivity for modern creators and developers.
+  </p>
+
+</div>
 
 ---
 
