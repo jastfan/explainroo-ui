@@ -1,5 +1,5 @@
 <div align="center">
-
+ 
   <img src="assets/logo.png" alt="Explainroo UI Logo" width="84" height="84" />
 
   <h1>Explainroo UI</h1>
